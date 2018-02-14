@@ -1,0 +1,40 @@
+{
+  "name": "auth-service",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev:watch": "tsc",
+    "dev:run": "nodemon dist/index.js",
+    "dev": "nodemon --exec ts-node src/index.ts"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.12",
+    "npm-run-all": "^4.1.2",
+    "renamer": "^0.6.1",
+    "ts-node": "^4.1.0"
+  },
+  "dependencies": {
+    "@types/bluebird": "^3.5.20",
+    "@types/dotenv": "^4.0.2",
+    "@types/joi": "^13.0.5",
+    "@types/jsonwebtoken": "^7.2.5",
+    "@types/koa": "^2.0.44",
+    "@types/koa-bodyparser": "^4.2.0",
+    "@types/koa-helmet": "^3.1.2",
+    "@types/koa-morgan": "^1.0.4",
+    "@types/koa-router": "^7.0.27",
+    "@types/redis": "^2.8.5",
+    "bluebird": "^3.5.1",
+    "dotenv": "^5.0.0",
+    "joi": "^13.1.2",
+    "jsonwebtoken": "^8.1.1",
+    "koa": "^2.5.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-helmet": "^3.3.0",
+    "koa-morgan": "^1.0.1",
+    "koa-router": "^7.4.0",
+    "redis": "^2.8.0",
+    "typescript": "^2.7.1"
+  }
+}
