@@ -4,17 +4,10 @@
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
-    "dev:watch": "tsc",
-    "dev:run": "nodemon dist/index.js",
     "dev": "nodemon --exec ts-node src/index.ts"
   },
   "devDependencies": {
-    "nodemon": "^1.14.12",
-    "npm-run-all": "^4.1.2",
-    "renamer": "^0.6.1",
-    "ts-node": "^4.1.0"
-  },
-  "dependencies": {
+    "@types/bcrypt": "^1.0.0",
     "@types/bluebird": "^3.5.20",
     "@types/dotenv": "^4.0.2",
     "@types/joi": "^13.0.5",
@@ -25,6 +18,13 @@
     "@types/koa-morgan": "^1.0.4",
     "@types/koa-router": "^7.0.27",
     "@types/redis": "^2.8.5",
+    "nodemon": "^1.14.12",
+    "npm-run-all": "^4.1.2",
+    "renamer": "^0.6.1",
+    "ts-node": "^4.1.0"
+  },
+  "dependencies": {
+    "bcrypt": "^1.0.3",
     "bluebird": "^3.5.1",
     "dotenv": "^5.0.0",
     "joi": "^13.1.2",

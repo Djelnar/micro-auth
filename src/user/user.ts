@@ -1,15 +1,21 @@
 import * as Joi from 'joi'
+import * as bcrypt from 'bcrypt'
+import * as env from 'dotenv';
 import { schema } from './schema'
 import { redisClient } from '../redis-client';
 import { Token } from '../token';
-import * as Koa from 'koa'
 
 
+env.config()
 
 interface Body {
   username: string,
   password: string,
 }
+
+const {
+  SALT,
+} = process.env
 
 const isAuthorized = async (body: Body) => {
   const { error, value } = Joi.validate(body, schema)
@@ -21,7 +27,9 @@ const isAuthorized = async (body: Body) => {
   const providedPassword = value.password
   const correctPassword = await redisClient.getAsync(value.username)
 
-  return providedPassword === correctPassword
+  const isTrue = await bcrypt.compare(providedPassword, correctPassword)
+
+  return isTrue
 }
 
 const hasValidRefreshToken = async (token: string) => {
@@ -50,10 +58,15 @@ const register = async (body: Body) => {
     }
   }
 
-  await redisClient.setAsync(username, password)
+  const passwordHash = await bcrypt.hash(password, parseInt(SALT, 10))
+
+  await redisClient.setAsync(username, passwordHash)
 
   return {
-    value,
+    value: {
+      username,
+      password: passwordHash,
+    },
   }
 }
 
