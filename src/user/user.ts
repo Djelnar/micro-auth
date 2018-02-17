@@ -1,10 +1,9 @@
 import * as Joi from 'joi'
 import * as bcrypt from 'bcrypt'
-import * as env from 'dotenv';
+import * as env from 'dotenv'
 import { schema } from './schema'
-import { redisClient } from '../redis-client';
-import { Token } from '../token';
-
+import { redisClient } from '../redis-client'
+import { Token } from '../token'
 
 env.config()
 

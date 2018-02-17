@@ -4,7 +4,6 @@ import * as env from 'dotenv'
 import { redisClient } from '../redis-client'
 console.log(redisClient.setAsync)
 
-
 env.config()
 promisifyAll(jwt)
 

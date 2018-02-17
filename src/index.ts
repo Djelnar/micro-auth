@@ -6,7 +6,6 @@ import * as helmet from 'koa-helmet'
 import { promisifyAll } from 'bluebird'
 import { router } from './routes'
 
-
 env.config()
 
 const {

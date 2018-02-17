@@ -4,7 +4,8 @@
   "main": "dist/index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --exec ts-node src/index.ts"
+    "dev": "nodemon --exec ts-node src/index.ts",
+    "fix": "tslint --fix ./src/index.ts"
   },
   "devDependencies": {
     "@types/bcrypt": "^1.0.0",
@@ -21,7 +22,9 @@
     "nodemon": "^1.14.12",
     "npm-run-all": "^4.1.2",
     "renamer": "^0.6.1",
-    "ts-node": "^4.1.0"
+    "ts-node": "^4.1.0",
+    "tslint": "^5.9.1",
+    "tslint-config-standard": "^7.0.0"
   },
   "dependencies": {
     "bcrypt": "^1.0.3",

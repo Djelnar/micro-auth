@@ -2,7 +2,6 @@ import * as Redis from 'redis'
 import * as env from 'dotenv'
 import { promisifyAll } from 'bluebird'
 
-
 env.config()
 
 promisifyAll(Redis.RedisClient.prototype)
@@ -10,8 +9,8 @@ promisifyAll(Redis.Multi.prototype)
 
 declare module 'redis' {
   export interface RedisClient extends NodeJS.EventEmitter {
-    setAsync(key: string, value: string): Promise<string>;
-    getAsync(key: string): Promise<string>;
+    setAsync(key: string, value: string): Promise<string>
+    getAsync(key: string): Promise<string>
   }
 }
 

@@ -1,8 +1,7 @@
 import * as Router from 'koa-router'
 import * as body from 'koa-bodyparser'
 import { User } from '../user'
-import { Token } from '../token';
-
+import { Token } from '../token'
 
 const router = new Router()
 

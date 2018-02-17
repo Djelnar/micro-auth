@@ -1,6 +1,5 @@
 import * as Joi from 'joi'
 
-
 export const schema = Joi.object().keys({
   username: Joi
     .string()
